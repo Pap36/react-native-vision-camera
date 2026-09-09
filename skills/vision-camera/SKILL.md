@@ -19,7 +19,7 @@ For a new V5 installation, follow [Getting Started](https://visioncamera.margelo
 
 Photo and video capture do not require the barcode scanner, Worklets, or Skia packages. Add optional packages only for features that need them, following the relevant guide below.
 
-Configure camera permission in the Expo app config or native manifests. Add microphone permission only when recording audio. Native dependency and permission-config changes require a new native build; restarting Metro is not enough. Follow the app's existing local or EAS development-build workflow.
+Configure camera permission in the Expo app config or native manifests. V5 does not provide a VisionCamera Expo config plugin; remove the old VisionCamera plugin entry when migrating from V4. Add microphone permission only when recording audio. Native dependency and permission-config changes require a new native build; restarting Metro is not enough. Follow the app's existing local or EAS development-build workflow.
 
 ## Implement the feature
 
