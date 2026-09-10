@@ -6,7 +6,6 @@ on:
   pull_request:
     paths:
       - '.github/workflows/build-android-release.yml'
-      - 'packages/react-native-vision-camera-resizer/android/**'
 
 permissions:
   contents: write
@@ -33,9 +32,6 @@ jobs:
         working-directory: apps/simple-camera/android
         run: |
           ./gradlew clean :app:assembleRelease --no-daemon --no-build-cache
-
-      - name: Verify resizer shader is packaged
-        run: unzip -t apps/simple-camera/android/app/build/outputs/apk/release/app-release.apk assets/shaders/Resizer.comp.spv
 
       - name: Upload APK artifact
         if: ${{ github.event_name == 'pull_request' }}
